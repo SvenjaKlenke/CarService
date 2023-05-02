@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @NoArgsConstructor
@@ -18,6 +19,10 @@ public class CarRepository {
 
     public void addCar (Car car){
         this.allCars.add(car);
+    }
+
+    public void deleteCar (UUID uuid){
+        this.allCars.remove(uuid);
     }
 
 

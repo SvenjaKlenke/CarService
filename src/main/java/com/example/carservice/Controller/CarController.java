@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.awt.*;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/car")
@@ -22,13 +23,15 @@ public class CarController {
         carService.addCar(car);
 
     }
+
+    @DeleteMapping("delete-car/{uuid}")
+    public void deleteCar (@PathVariable UUID uuid){
+        carService.deleteCar(uuid);
+    }
     @GetMapping ("all-cars")
     public List controllerGetCars (){
         return carService.getAllCarsService();
     }
-
-
-
 
 
 }
