@@ -6,9 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 @Data
@@ -25,10 +23,10 @@ public class CarService {
     }
 
     public void deleteCar (UUID uuid){
-        this.carRepository.deleteCar(uuid);
+        carRepository.deleteCar(uuid);
     }
 
-    public List getAllCarsService() {
+    public Map<UUID, Car> getAllCarsService() {
         return carRepository.getAllCars();
     }
 }

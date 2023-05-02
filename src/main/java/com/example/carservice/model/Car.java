@@ -14,6 +14,6 @@ public class Car {
 
     private String name;
     private int wheels;
-    private boolean hasTÜV;
+    private boolean hasTUEV;
     private UUID uuid = UUID.randomUUID();
 }

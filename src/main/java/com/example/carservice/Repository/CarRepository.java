@@ -5,9 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Data
 @NoArgsConstructor
@@ -15,14 +13,14 @@ import java.util.UUID;
 
 public class CarRepository {
 
-    private List <Car> allCars = new ArrayList<>();
+    private Map <UUID,Car> allCars = new HashMap<>();
 
     public void addCar (Car car){
-        this.allCars.add(car);
+        this.allCars.put(car.getUuid(),car);
     }
 
     public void deleteCar (UUID uuid){
-        this.allCars.remove(uuid);
+         allCars.remove(uuid);
     }
 
 
